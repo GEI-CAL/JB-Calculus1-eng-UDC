@@ -1,0 +1,1071 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.6. Theorem of Taylor &#8212; Calculus in one variable</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.7. Bulletin III: Differential calculus of functions of a variable" href="07.Boletin3_en.html" />
+    <link rel="prev" title="3.5. Convexity and concavity" href="05.ConcavidadConvexidad_en.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-148221575-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Calculus in one variable</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/README.html">
+   1. Sets of numbers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
+     1.1. Classical sets of numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/02.NumerosComplejos.html">
+     1.2. Complex numbers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/README.html">
+   2. Real functions of real variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/01.Boletin0.html">
+     2.1. Boletin 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">
+     2.2. Basic definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/03.FuncionesElementales.html">
+     2.3. Elemental functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/04.Limites.html">
+     2.4. Limits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/05.Continuidad.html">
+     2.5. Continuity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/06.Dicotomia.html">
+     2.6. Bisection numerical method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/07.Lagrange.html">
+     2.7. Lagrange interpolation polynomial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/08.Boletin1.html">
+     2.8. Boletin 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletin 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README_en.html">
+   3. Derivative
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01.DerivacionDefProp_en.html">
+     3.1. Definition of the derivative and basic properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.NewtonRaphson_en.html">
+     3.2. Newton-Raphson numerical method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.DerivadasSucesivas_en.html">
+     3.3. Successive derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.AplicacionesDerivada_en.html">
+     3.4. Applications of the derivative
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.ConcavidadConvexidad_en.html">
+     3.5. Convexity and concavity
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.6. Taylor's theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.Boletin3_en.html">
+     3.7. Boletin 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04/README.html">
+   4. Integration
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/01.IntegracionIndefinida.html">
+     4.1. Indefinite integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/02.IntegracionRiemann.html">
+     4.2. Riemann integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/03.TeoremaFundamental.html">
+     4.3. Fundamental Theorem of Calculus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/04.IntegracionNumerica.html">
+     4.4. Numerical integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/05.IntegracionImpropia.html">
+     4.5. Improper integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/06.AplicacionesIntegral.html">
+     4.6. Applications of integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/07.EcuacionesDiferenciales.html">
+     4.7. Differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/08.Boletin4.html">
+     4.8. Boletin 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python for Calculus in one variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/01.IntroduccionSympy.html">
+     5.1. Introduction to SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
+     5.2. Limits and continuity in SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
+     5.3. Introduction to NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
+     5.4. Graphics with Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/05.Derivacion.html">
+     5.5. Derivatives in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/06.Integracion.html">
+     5.6. Integration in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/README.html">
+   6. Exercices and exams
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_22.html">
+     6.1. Exam January 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/julio_22.html">
+     6.2. Exam July 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_23.html">
+     6.3. Exam January 2023
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/julio_23.html">
+     6.4. Exam July 2023
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/03/06.TeoremaTaylor_en.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/capitulos/03/06.TeoremaTaylor_en.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-example">
+   3.6.1. Practical example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statement-of-the-theorem">
+   3.6.2. Statement of the theorem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bounding-the-error">
+     3.6.2.1. Bounding the error
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculation-of-the-taylor-polynomial-in-sympy">
+   3.6.3. Calculation of the Taylor Polynomial in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#completing-the-practical-example">
+   3.6.4. Completing the Practical Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proposed-exercise">
+   3.6.5. Proposed Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-to-practice-a-little-more">
+   3.6.6. Exercises to practice a little more
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Theorem of Taylor</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-example">
+   3.6.1. Practical example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statement-of-the-theorem">
+   3.6.2. Statement of the theorem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bounding-the-error">
+     3.6.2.1. Bounding the error
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculation-of-the-taylor-polynomial-in-sympy">
+   3.6.3. Calculation of the Taylor Polynomial in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#completing-the-practical-example">
+   3.6.4. Completing the Practical Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proposed-exercise">
+   3.6.5. Proposed Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-to-practice-a-little-more">
+   3.6.6. Exercises to practice a little more
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="theorem-of-taylor">
+<span id="sec-taylor"></span><h1><span class="section-number">3.6. </span>Theorem of Taylor<a class="headerlink" href="#theorem-of-taylor" title="Permalink to this headline">#</a></h1>
+<p>We will use Taylor’s theorem to approximate a complex function (in the sense that it is difficult to calculate its exact value at that point) at a point using a polynomial of degree n (which is easily evaluable). For this, we will need the starting function to be differentiable <span class="math notranslate nohighlight">\(n+1\)</span> times.</p>
+<section id="practical-example">
+<h2><span class="section-number">3.6.1. </span>Practical example<a class="headerlink" href="#practical-example" title="Permalink to this headline">#</a></h2>
+<p>Suppose we want to approximate the value of the natural logarithm of 1.3, <span class="math notranslate nohighlight">\(\ln(1.3)\)</span>. A first approximation would be to take</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(1.3)\approx\ln(1)=0.
+\]</div>
+<p>Can we improve this approximation? The answer is yes. All we need to do is calculate the tangent line to the logarithm function at the point <span class="math notranslate nohighlight">\(x=1\)</span> (we choose this point because it is easy to know the tangent line there and, moreover, it is close to <span class="math notranslate nohighlight">\(1.3\)</span>) and <em>walk along the tangent line</em> to the desired point (in this case 1.3). Let’s see it in the following graph:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">mp</span><span class="o">.</span><span class="n">__version__</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># we deffine the function</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">f_expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_expr</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The value of ln(1.3) is: &#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="mf">1.3</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># tangent line at 1</span>
+<span class="n">f_der</span><span class="o">=</span>  <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_der</span><span class="p">)</span>
+<span class="n">rt</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The tangent line to f(x) =&#39;</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39; at x=1 is: P1(x) =&#39;</span><span class="p">,</span> <span class="n">rt</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># point of interest</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mf">1.3</span>
+
+<span class="c1"># We create function graphs</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(x)=\ln(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_1(x)=x-1$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
+
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(x)=\ln(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_1(x)=x-1$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">1.4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The value of ln(1.3) is:  0.262364264467491 
+
+The tangent line to f(x) = log(x)  at x=1 is: P1(x) = x - 1 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x200bb083050&gt;
+</pre></div>
+</div>
+<img alt="../../_images/06.TeoremaTaylor_en_2_2.png" src="../../_images/06.TeoremaTaylor_en_2_2.png" />
+</div>
+</div>
+<p>The idea is simple. We know that the line that is tangent to the natural logarithm function at the point <span class="math notranslate nohighlight">\(x_0=1\)</span> <em>resembles</em> the <span class="math notranslate nohighlight">\(\ln\)</span> function near that point. Moreover, it is easy to compute. Therefore, all we need to do is evaluate the tangent line at <span class="math notranslate nohighlight">\(1.3\)</span> to get a good approximation of <span class="math notranslate nohighlight">\(\ln(1.3)\)</span>!</p>
+<p>Let’s calculate that tangent line. We need the function and its derivative evaluated at the point <span class="math notranslate nohighlight">\(x_0\)</span>, that is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lr}
+ f(x)=\ln(x) &amp;\Rightarrow&amp; f(x_0)=f(1)=\ln(1)=0, \\
+ f'(x)=\frac{1}{x} &amp;\Rightarrow&amp; f'(x_0)=f'(1)=\frac{1}{1}=1. 
+\end{array}
+\end{split}\]</div>
+<p>Then the equation of the tangent line is</p>
+<div class="math notranslate nohighlight">
+\[
+y=f(x_0)+f'(x_0)\left(x-x_0\right) \Rightarrow y=0+1(x-1)=x-1.
+\]</div>
+<p>Therefore, the value of the tangent line at <span class="math notranslate nohighlight">\(x=1.3\)</span> (which we take as an approximation of <span class="math notranslate nohighlight">\(\ln(1.3)\)</span>) is</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(1.3)\approx 1.3-1=0.3.
+\]</div>
+<p>Is this a correct approximation? As we have calculated earlier in python</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(1.3)=0.262364264467491...
+\]</div>
+<p>so indeed, <span class="math notranslate nohighlight">\(0.3\)</span> is a reasonable approximation of this value.</p>
+<p>And now, can we improve it? The answer is again yes: by using Taylor’s theorem.</p>
+</section>
+<section id="statement-of-the-theorem">
+<h2><span class="section-number">3.6.2. </span>Statement of the theorem<a class="headerlink" href="#statement-of-the-theorem" title="Permalink to this headline">#</a></h2>
+<p>First, we define the Taylor polynomial:</p>
+<div class="proof definition admonition" id="def_Taylor">
+<p class="admonition-title"><span>Definition </span> (Polynomial of Taylor )</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\to \mathbb{R}\)</span> be a function of class <span class="math notranslate nohighlight">\(n+1\)</span> in <span class="math notranslate nohighlight">\((a,b)\)</span>, for some <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>.  Let <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span>. We call the <strong>Taylor polynomial</strong> of order <span class="math notranslate nohighlight">\(n\)</span> centered at <span class="math notranslate nohighlight">\(x_0\)</span> for the function <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(P_{n,f,x_0}\)</span>, the polynomial that evaluated at <span class="math notranslate nohighlight">\(x\)</span> takes the value</p>
+<div class="math notranslate nohighlight">
+\[
+P_{n,f,x_0}(x):=f(x_0)+\frac{f'(x_0)}{1!}\left(x-x_0\right)+
+                    \frac{f''(x_0)}{2!}\left(x-x_0\right)^{2}+\dots+
+                    \frac{f^{(n)}(x_0)}{n!}\left(x-x_0\right)^{n}.
+\]</div>
+</section>
+</div><p>The Taylor Theorem can be stated as follows:</p>
+<div class="proof theorem admonition" id="th_Taylor">
+<p class="admonition-title"><span>Theorem </span> (Theorem of Taylor )</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\to \mathbb{R}\)</span> be a function of class <span class="math notranslate nohighlight">\(n+1\)</span> in <span class="math notranslate nohighlight">\((a,b)\)</span>, for some <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>. Let <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span>. Let <span class="math notranslate nohighlight">\(P_{n,f,x_0}\)</span> be its Taylor polynomial of order <span class="math notranslate nohighlight">\(n\)</span> centered at <span class="math notranslate nohighlight">\(x_0\)</span>. Then, for any <span class="math notranslate nohighlight">\(x\in(a,b)\)</span> there exists a <span class="math notranslate nohighlight">\(\xi\in(x,x_0)\)</span> (or <span class="math notranslate nohighlight">\(\xi\in(x_0,x)\)</span>) such that</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x)=P_{n,f,x_0}(x)+\frac{f^{(n+1)}(\xi)}{(n+1)!}\left(x-x_0\right)^{n+1}.
+\]</div>
+</section>
+</div><div class="proof remark admonition" id="rem_Taylor">
+<p class="admonition-title"><span>Remark </span></p>
+<section class="remark-content" id="proof-content">
+<ul>
+<li><p>We are generalizing the mean value theorem for differential calculus (Lagrange’s theorem). Indeed, this can be understood as Taylor with <span class="math notranslate nohighlight">\(n=0\)</span>, <span class="math notranslate nohighlight">\(x_0=a\)</span> and <span class="math notranslate nohighlight">\(x=b\)</span>, as it states</p>
+<div class="math notranslate nohighlight">
+\[
+   \exists c\in(a,b) \text{ such that } f(b)=f(a)+f'(c)(b-a).
+   \]</div>
+</li>
+<li><p>The Taylor polynomial of order 1 relative to the function <span class="math notranslate nohighlight">\(f\)</span> and the point <span class="math notranslate nohighlight">\(x_0\)</span> defines a local linear approximation of <span class="math notranslate nohighlight">\(f\)</span> in a neighborhood of <span class="math notranslate nohighlight">\(x_0\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(x_0=0\)</span>, the polynomial is called <strong>MacLaurin</strong>.</p></li>
+<li><p>Let’s highlight that <span class="math notranslate nohighlight">\(\xi\)</span> <strong>is not known</strong>. The only thing we know is that <span class="math notranslate nohighlight">\(\xi \in (x,x_0)\)</span> or <span class="math notranslate nohighlight">\(\xi \in (x_0,x)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P_{n,f,x_0}\)</span> is the only polynomial of degree less than or equal to <span class="math notranslate nohighlight">\(n\)</span> such that at the point <span class="math notranslate nohighlight">\(x_0\)</span> it and its derivatives up to order <span class="math notranslate nohighlight">\(n\)</span> coincide with <span class="math notranslate nohighlight">\(f\)</span> and its derivatives up to the same order.
+<span class="math notranslate nohighlight">\( P_{n,f,x_0}(x)\)</span> is a good approximation of <span class="math notranslate nohighlight">\(f(x)\)</span> when <span class="math notranslate nohighlight">\(x\)</span> is close to <span class="math notranslate nohighlight">\(x_0\)</span>. Moreover, this approximation is better the larger <span class="math notranslate nohighlight">\(n\)</span> is (the fact that <span class="math notranslate nohighlight">\(x\)</span> is far from <span class="math notranslate nohighlight">\(x_0\)</span> can be compensated by increasing <span class="math notranslate nohighlight">\(n\)</span>).</p></li>
+</ul>
+</section>
+</div><section id="bounding-the-error">
+<h3><span class="section-number">3.6.2.1. </span>Bounding the error<a class="headerlink" href="#bounding-the-error" title="Permalink to this headline">#</a></h3>
+<p>A direct consequence of Taylor’s Theorem is that</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)-P_{n,f,x_0}(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}\left(x-x_0\right)^{n+1},
+\]</div>
+<p>and therefore,</p>
+<div class="math notranslate nohighlight">
+\[
+\left|f(x)-P_{n,f,x_0}(x)\right|=\frac{\left|f^{(n+1)}(\xi)\right|}{(n+1)!}\left|x-x_0\right|^{n+1}.
+\]</div>
+<p>That is, the absolute difference between <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(P_{n,f,x_0}(x)\)</span> is the term that depends on <span class="math notranslate nohighlight">\(\xi\)</span> (unknown) in absolute value, often represented as</p>
+<div class="math notranslate nohighlight">
+\[
+R_{n,f,x_0}(x):=\frac{f^{(n+1)}(\xi)}{(n+1)!}\left(x-x_0\right)^{n+1}.
+\]</div>
+<p>Obviously, not knowing <span class="math notranslate nohighlight">\(\xi\)</span> we also cannot know exactly how much <span class="math notranslate nohighlight">\(R_{n,f,x_0}(x)\)</span> will be. What we can do is bound it (that is, indicate that it is less than or equal to a certain number). To do this, just realize that, as <span class="math notranslate nohighlight">\(\xi\)</span> is between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x_0\)</span> (or between <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x\)</span>), it holds</p>
+<div class="math notranslate nohighlight">
+\[
+\left|f^{(n+1)}(\xi)\right|\leq \sup_{s\in(x,x_{0})} \left|f^{(n+1)}(s)\right| \leq \sup_{s\in[x,x_{0}]} \left|f^{(n+1)}(s)\right|,
+\]</div>
+<p>and, then,</p>
+<div class="math notranslate nohighlight">
+\[
+\left|R_{n,f,x_0}(x)\right|=\frac{\left|f^{(n+1)}(\xi)\right|}{(n+1)!}\left|x-x_0\right|^{n+1}\leq \frac{\sup_{s\in[x,x_{0}]} \left|f^{(n+1)}(s)\right|}{(n+1)!}\left|x-x_0\right|^{n+1}.
+\]</div>
+<p>Summarizing, the bounding of the absolute error we make if we approximate <span class="math notranslate nohighlight">\(f(x)\)</span> by <span class="math notranslate nohighlight">\(P_{n,f,x_0}(x)\)</span> will be</p>
+<div class="math notranslate nohighlight">
+\[
+\left|f(x)-P_{n,f,x_0}(x)\right|=\frac{\left|f^{(n+1)}(\xi)\right|}{(n+1)!}\left|x-x_0\right|^{n+1} \leq  \frac{\sup_{s\in[x,x_{0}]} \left|f^{(n+1)}(s)\right|}{(n+1)!}\left|x-x_0\right|^{n+1}.
+\]</div>
+<p>Therefore, to bound this error all we need to do is find the absolute maximum and minimum (if they exist) of the function <span class="math notranslate nohighlight">\(f^{(n+1)}\)</span> in <span class="math notranslate nohighlight">\([x,x_{0}]\)</span> and choose among them the one with the greatest absolute value.</p>
+<p>To avoid confusion due to notation, we can denote <span class="math notranslate nohighlight">\(g(s):=f^{(n+1)}(s)\)</span> and thus the dreaded problem of bounding Taylor’s error is reduced to a standard problem of calculating maximum and minimum absolute of a function <span class="math notranslate nohighlight">\(g\)</span> in an interval <span class="math notranslate nohighlight">\([x,x_{0}]\)</span>.</p>
+</section>
+</section>
+<section id="calculation-of-the-taylor-polynomial-in-sympy">
+<h2><span class="section-number">3.6.3. </span>Calculation of the Taylor Polynomial in <code class="docutils literal notranslate"><span class="pre">Sympy</span></code><a class="headerlink" href="#calculation-of-the-taylor-polynomial-in-sympy" title="Permalink to this headline">#</a></h2>
+<p>We will show a <code class="docutils literal notranslate"><span class="pre">Python</span></code> function that symbolically calculates the Taylor polynomial of a given function. The input arguments will be the function, <span class="math notranslate nohighlight">\(f\)</span>, the Taylor center, <span class="math notranslate nohighlight">\(x_{0}\)</span>, and the order of the polynomial, <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>The function will return the Taylor polynomial and the function that provides the Taylor remainder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,t&#39;</span><span class="p">)</span>
+
+<span class="c1"># p: Taylor&#39;s polynomial</span>
+<span class="c1"># R: rest in absolut value</span>
+<span class="k">def</span> <span class="nf">taylor</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">+=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="n">i</span>
+    <span class="n">R</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span><span class="p">,</span><span class="n">R</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="completing-the-practical-example">
+<h2><span class="section-number">3.6.4. </span>Completing the Practical Example<a class="headerlink" href="#completing-the-practical-example" title="Permalink to this headline">#</a></h2>
+<p>We are going to use the previous function, <code class="docutils literal notranslate"><span class="pre">taylor</span></code>, to improve the approximation of <span class="math notranslate nohighlight">\(\ln(1.3)\)</span> that we achieved with the tangent line at the beginning of this section using the Taylor polynomial of order 2. We will also bound the error committed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code here</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># point at which we center the Taylor polynomial</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># function we want approximate</span>
+<span class="n">f_exp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># we compute Taylor&#39;s theorem of order 1, centered at x0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># grade of the polynomial</span>
+<span class="n">P1</span><span class="p">,</span><span class="n">R1</span><span class="o">=</span><span class="n">taylor</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Taylor polynomial of order 1: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">P1</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Rest of Taylor of order 1: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">R1</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># we compute Taylor&#39;s theorem of order 1</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="n">P2</span><span class="p">,</span><span class="n">R2</span><span class="o">=</span><span class="n">taylor</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Taylor polynomial of order 2: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">P2</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Rest of Taylor of order 2: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">R2</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Taylor polynomial of order 1: 
+ 1.0*x - 1.0 
+ Rest of Taylor of order 1: 
+ -(x - 1.0)**2/(2*t**2) 
+
+Taylor polynomial of order 2: 
+ 1.0*x - 0.5*(x - 1.0)**2 - 1.0 
+ Rest of Taylor of order 2: 
+ (x - 1.0)**3/(3*t**3) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>We draw the result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We convert P1 and P2 into `lambdify` functions so we can draw them</span>
+<span class="n">P1_lamb</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P1</span><span class="p">)</span>
+<span class="n">P2_lamb</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P2</span><span class="p">)</span>
+
+<span class="c1"># We create function graphs</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+
+<span class="c1"># we evaluate P2 at the points of x1</span>
+<span class="n">P1x</span> <span class="o">=</span> <span class="n">P1_lamb</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">P2x</span> <span class="o">=</span> <span class="n">P2_lamb</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(x)=\ln(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">P1x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_1(x)=x-1$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">P2x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_2(x)=x-1 - \dfrac{(x-1)^2}</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
+
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(x)=\ln(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">P1x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_1(x)=x-1$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">P2x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$P_2(x)=x-1 - \dfrac{(x-1)^2}</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">1.4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x200bd196d10&gt;
+</pre></div>
+</div>
+<img alt="../../_images/06.TeoremaTaylor_en_11_1.png" src="../../_images/06.TeoremaTaylor_en_11_1.png" />
+</div>
+</div>
+<p>We have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{rl}
+ f(x)=\ln(x) &amp;\Rightarrow&amp; f(x_0)=f(1)=\ln(1)=0, \\
+ f'(x)=\frac{1}{x} &amp;\Rightarrow&amp; f'(x_0)=f'(1)=\frac{1}{1}=1, \\
+ f''(x)=-\frac{1}{x^2} &amp;\Rightarrow&amp; f''(x_0)=f''(1)=-\frac{1}{1}=-1, \\
+ f'''(x)=\frac{2}{x^3}. \\
+\end{array}
+\end{split}\]</div>
+<p>Then,</p>
+<div class="math notranslate nohighlight">
+\[
+P_{2,f,1}(x)=f(1)+\frac{f'(1)}{1!}(x-1)+\frac{f''(1)}{2!}(x-1)^2=(x-1)-\frac{(x-1)^2}{2}.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(1.3)=f(1.3)\approx
+P_{2,f,1}(1.3)=1.3-1-\frac{(1.3-1)^2}{2}=0.3-\frac{0.09}{2} = \frac{51}{200}=0.255.
+\]</div>
+<p>Let’s remember that <span class="math notranslate nohighlight">\(\ln(1.3)=0.262364264467491...\)</span> and the approximation obtained by the tangent line is <span class="math notranslate nohighlight">\(P_{1,f,1}(1.3)=0.3\)</span>. We see that <span class="math notranslate nohighlight">\(P_{2,f,1}(1.3)=0.255\)</span> is a good approximation of the value of <span class="math notranslate nohighlight">\(\ln(1.3)\)</span> and, as expected, better than that corresponding to the Taylor polynomial of order 1.</p>
+<p>Let’s bound the error using what we just explained:</p>
+<div class="math notranslate nohighlight">
+\[
+\left|f(1.3)-P_{n=2,f,x_0=1}(1.3)\right|=\frac{\left|f'''(\xi)\right|}{3!}\left|1.3-1\right|^{3} \leq  \frac{\sup_{s\in[1,1.3]} \left|f'''(s)\right|}{3!}0.3^{3}.
+\]</div>
+<p>So… we just need to calculate that supremum!</p>
+<div class="math notranslate nohighlight">
+\[
+\sup_{s\in[1,1.3]} \left|f'''(s)\right| = \sup_{s\in[1,1.3]}
+\left|\frac{2}{s^3}\right| \stackrel{(*)}{=} \frac{2}{1^3} = 2. 
+\]</div>
+<p><span class="math notranslate nohighlight">\((*)\)</span> because the function <span class="math notranslate nohighlight">\(\frac{2}{s^3}\)</span> is positive and decreasing,
+it reaches its maximum in absolute value at the left end (that is, at <span class="math notranslate nohighlight">\(s=1\)</span>).</p>
+</section>
+<section id="proposed-exercise">
+<h2><span class="section-number">3.6.5. </span>Proposed Exercise<a class="headerlink" href="#proposed-exercise" title="Permalink to this headline">#</a></h2>
+<p>Using <code class="docutils literal notranslate"><span class="pre">Python</span></code>, calculate the Taylor polynomial of different orders for <span class="math notranslate nohighlight">\(f(x)=\cos(x)\)</span> centered at 0, and graphically check how those of higher order approximate the given function much better.</p>
+</section>
+<section id="exercises-to-practice-a-little-more">
+<h2><span class="section-number">3.6.6. </span>Exercises to practice a little more<a class="headerlink" href="#exercises-to-practice-a-little-more" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2012/12/ejercicio-de-taylor.html">https://existelimite.blogspot.com/2012/12/ejercicio-de-taylor.html</a></p></li>
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2013/01/aproximar-una-raiz-cuarta-con-el.html">https://existelimite.blogspot.com/2013/01/aproximar-una-raiz-cuarta-con-el.html</a></p></li>
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2013/10/una-cuestion-sobre-el-polinomio-de.html">https://existelimite.blogspot.com/2013/10/una-cuestion-sobre-el-polinomio-de.html</a></p></li>
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2021/10/otro-ejercicio-de-taylor-este-para-una.html">https://existelimite.blogspot.com/2021/10/otro-ejercicio-de-taylor-este-para-una.html</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos/03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="05.ConcavidadConvexidad_en.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.5. </span>Convexity and concavity</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="07.Boletin3_en.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span>Bulletin III: Differential calculus of functions of a variable</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+This book is under a <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Creative Commons Licence, Atribution 4.0 International </a>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
