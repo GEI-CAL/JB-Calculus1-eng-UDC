@@ -1,0 +1,944 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.7. Bulletin III: Differential calculus of functions of a variable &#8212; Calculus in one variable</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Integración de una función de variable real" href="../04/README.html" />
+    <link rel="prev" title="3.6. Theorem of Taylor" href="06.TeoremaTaylor_en.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-148221575-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Calculus in one variable</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/README.html">
+   1. Sets of numbers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
+     1.1. Classical sets of numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/02.NumerosComplejos.html">
+     1.2. Complex numbers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/README.html">
+   2. Real functions of real variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/01.Boletin0.html">
+     2.1. Boletin 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">
+     2.2. Basic definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/03.FuncionesElementales.html">
+     2.3. Elemental functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/04.Limites.html">
+     2.4. Limits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/05.Continuidad.html">
+     2.5. Continuity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/06.Dicotomia.html">
+     2.6. Bisection numerical method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/07.Lagrange.html">
+     2.7. Lagrange interpolation polynomial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/08.Boletin1.html">
+     2.8. Boletin 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletin 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README_en.html">
+   3. Derivative
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01.DerivacionDefProp_en.html">
+     3.1. Definition of the derivative and basic properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.NewtonRaphson_en.html">
+     3.2. Newton-Raphson numerical method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.DerivadasSucesivas_en.html">
+     3.3. Successive derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.AplicacionesDerivada_en.html">
+     3.4. Applications of the derivative
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.ConcavidadConvexidad_en.html">
+     3.5. Convexity and concavity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.TeoremaTaylor_en.html">
+     3.6. Taylor's theorem
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.7. Boletin 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04/README.html">
+   4. Integration
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/01.IntegracionIndefinida.html">
+     4.1. Indefinite integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/02.IntegracionRiemann.html">
+     4.2. Riemann integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/03.TeoremaFundamental.html">
+     4.3. Fundamental Theorem of Calculus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/04.IntegracionNumerica.html">
+     4.4. Numerical integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/05.IntegracionImpropia.html">
+     4.5. Improper integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/06.AplicacionesIntegral.html">
+     4.6. Applications of integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/07.EcuacionesDiferenciales.html">
+     4.7. Differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/08.Boletin4.html">
+     4.8. Boletin 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python for Calculus in one variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/01.IntroduccionSympy.html">
+     5.1. Introduction to SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
+     5.2. Limits and continuity in SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
+     5.3. Introduction to NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
+     5.4. Graphics with Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/05.Derivacion.html">
+     5.5. Derivatives in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/06.Integracion.html">
+     5.6. Integration in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/README.html">
+   6. Exercices and exams
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_22.html">
+     6.1. Exam January 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/julio_22.html">
+     6.2. Exam July 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_23.html">
+     6.3. Exam January 2023
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/julio_23.html">
+     6.4. Exam July 2023
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/03/07.Boletin3_en.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/capitulos/03/07.Boletin3_en.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-exercises">
+   3.7.1. Basic exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complementary-exercises">
+   3.7.2. Complementary exercises
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Bulletin III: Differential calculus of functions of a variable</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-exercises">
+   3.7.1. Basic exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complementary-exercises">
+   3.7.2. Complementary exercises
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="bulletin-iii-differential-calculus-of-functions-of-a-variable">
+<h1><span class="section-number">3.7. </span>Bulletin III: Differential calculus of functions of a variable<a class="headerlink" href="#bulletin-iii-differential-calculus-of-functions-of-a-variable" title="Permalink to this headline">#</a></h1>
+<section id="basic-exercises">
+<h2><span class="section-number">3.7.1. </span>Basic exercises<a class="headerlink" href="#basic-exercises" title="Permalink to this headline">#</a></h2>
+<p><strong><FONT SIZE=4>[1]</font></strong> Sea <span class="math notranslate nohighlight">\(f\)</span> la función dada por <span class="math notranslate nohighlight">\(f(x)=5x^2.\)</span></p>
+<ol class="simple">
+<li><p>Use the definition of the derivative to show that <span class="math notranslate nohighlight">\(f'(x)=10x.\)</span></p></li>
+<li><p>Calculate the equation of the tangent line to the graph of <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(\displaystyle{x=\frac12}.\)</span></p></li>
+</ol>
+<p><strong><FONT SIZE=4>[2]</font></strong>
+Sea <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x) =
+\begin{cases}
+2x - 1             &amp; \quad \text{si } x \leq -1 \\
+( x+1)^3 + 2x &amp; \quad \text{si } x &gt; -1
+\end{cases}
+\end{split}\]</div>
+<p>Find out if it is differentiable at <span class="math notranslate nohighlight">\(x = -1\)</span>.</p>
+<p><strong><FONT SIZE=4>[3]</font></strong>
+Let <span class="math notranslate nohighlight">\(f\)</span> be the function given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x)=
+\begin{cases}
+\displaystyle{x+x^2 \sin\left(\frac 1x\right)} &amp; \text{  si  } x\neq 0 \\
+0 &amp; \text{  si  } x = 0
+\end{cases}
+\end{split}\]</div>
+<ol class="simple">
+<li><p>Obtain the expression of <span class="math notranslate nohighlight">\(f'(x)\)</span> for <span class="math notranslate nohighlight">\(x\neq 0\)</span>.</p></li>
+<li><p>Calculate <span class="math notranslate nohighlight">\(f' (0)\)</span> using the definition of derivative; that is, as a limit of the incremental quotient.</p></li>
+<li><p>Check that the value obtained in section [3.2] does not coincide with the result of replacing <span class="math notranslate nohighlight">\(x\)</span> with zero in the expression found in [3.1]. Reason why these different results occur.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[4]</font></strong>
+Consider the function <span class="math notranslate nohighlight">\(f\)</span> given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x) =
+\begin{cases}
+\displaystyle{\frac{1-e^{-x}}{x} }            &amp; \quad \text{si } x \neq 0 \\
+1 &amp; \quad \text{si } x = 0
+\end{cases}
+\end{split}\]</div>
+<ol class="simple">
+<li><p>Calculate <span class="math notranslate nohighlight">\(f'(x)\)</span> at all points where it exists.</p></li>
+<li><p>Calcula <span class="math notranslate nohighlight">\(\displaystyle{\lim _{x\rightarrow -\infty}{f(x)}}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle{\lim _{x\rightarrow \infty}{f(x)}}\)</span> y el conjunto <span class="math notranslate nohighlight">\(\textrm{Im}(f)\)</span>.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[5]</font></strong>
+Write the Newton-Raphson method to approximate <span class="math notranslate nohighlight">\(\sqrt[3]{2}\)</span> starting from <span class="math notranslate nohighlight">\(x_0 = 1\)</span>. Calculate the first two iterants.</p>
+<p><strong><FONT SIZE=4>[6]</font></strong>
+To approximate the value of the solution of the equation <span class="math notranslate nohighlight">\(x^3+2x-2=0,\)</span> in the interval <span class="math notranslate nohighlight">\([-2,\, 2],\)</span> we are going to use the Newton-Raphson method.</p>
+<ol class="simple">
+<li><p>State the Newton-Raphson algorithm for this case.</p></li>
+<li><p>Calculate the first two iterations using that algorithm. To do this, use the value <span class="math notranslate nohighlight">\(x_0=0\)</span> as an initial approximation.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[7]</font></strong>
+Let <span class="math notranslate nohighlight">\(f(x) = \displaystyle \arctan \left( \frac{\sin (x)}{1 + \cos (x)} \right )\)</span>. Calculate the tangent line to the graph of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+<p><strong><FONT SIZE=4>[8]</font></strong>
+Let the function <span class="math notranslate nohighlight">\(f\)</span> be given by <span class="math notranslate nohighlight">\(f(x) = (4x+1)^{(2+ \sin (x^2))}\)</span>. Calculate its derivative at any point.</p>
+<p><strong><FONT SIZE=4>[9]</font></strong>
+If we consider the function <span class="math notranslate nohighlight">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x)=\displaystyle{\left\{ \begin{array}{ccl}
+judisplaystyle{yufrac{yusin^2(zx)}{zx^2}} &amp; si &amp; hyunea 0 yuu
+\\
+\displaystyle{\frac13 }&amp; si &amp; x=0
+\end{array}
+\right. },
+\end{split}\]</div>
+<p>choose the correct option:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\lim _{x\rightarrow 0}f(x)=\frac{1}{3} \)</span>.</p></li>
+<li><p>Cannot calculate <span class="math notranslate nohighlight">\(\displaystyle{\lim _{x\rightarrow 0}{f(x)}}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{\lim _{x\rightarrow 0}{f(x)}}=3\)</span>.</p></li>
+<li><p>It is continuous in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p></li>
+</ol>
+<p><strong><FONT SIZE=4>[10]</font></strong>
+Calculate the values ​​of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[
+\displaystyle{\lim_{x\rightarrow 0}\frac{ax^2+bx+1-e^{2x}}{\sin(x^2)}=1}
+\]</div>
+<p><strong><FONT SIZE=4>[11]</font></strong>
+Let the function <span class="math notranslate nohighlight">\(f\)</span> be given by <span class="math notranslate nohighlight">\(\displaystyle f(x) = \frac{1}{2} x |x|\)</span>. What is the class of <span class="math notranslate nohighlight">\(f\)</span>?</p>
+<p><strong><FONT SIZE=4>[12]</font></strong> We consider the function <span class="math notranslate nohighlight">\(f\)</span> given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x) =
+\begin{cases}
+\sin (x) \, \qquad \text{ si } x \in (-\infty,0) \\
+\arctan (x) \,\qquad \text{ si } x \in [0,1] \\
+\pi x^3 / 4 \, \qquad \text{ si } x \in (1,+\infty)
+\end{cases}
+\end{split}\]</div>
+<ol class="simple">
+<li><p>Sketch the graphical representation of <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+<li><p>Determine the class of <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p></li>
+<li><p>Calculate, if possible, the tangent line to <span class="math notranslate nohighlight">\(f\)</span> at the point <span class="math notranslate nohighlight">\(x_0 = 0\)</span>.</p></li>
+<li><p>Determine a set of real numbers in which <span class="math notranslate nohighlight">\(f\)</span> is of class infinite.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[13]</font></strong>
+Let <span class="math notranslate nohighlight">\(f\)</span> be the function given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x) =
+\begin{cases}
+\sqrt{x} + 1    &amp; \quad  \text{si } x \in (0,1) \\
+\alpha x^2 + \beta x + 1   &amp; \quad  \text{si } x \in [1,2)
+\end{cases}
+\end{split}\]</div>
+<ol class="simple">
+<li><p>Determine <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> so that <span class="math notranslate nohighlight">\(f\)</span> is differentiable in <span class="math notranslate nohighlight">\((0,2)\)</span>.</p></li>
+<li><p>What conditions must <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> satisfy so that <span class="math notranslate nohighlight">\(f\)</span> has a relative minimum at the point <span class="math notranslate nohighlight">\(x=1\)</span>?</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[14]</font></strong>
+Calculates the relative and absolute extremes if they exist, of the function defined in the
+intervalo <span class="math notranslate nohighlight">\(\left [ -\frac{1}{2} , \frac{3}{2} \right ]\)</span> por <span class="math notranslate nohighlight">\(f(x) = x^2 - 2|x| + 2\)</span>.</p>
+<p><strong><FONT SIZE=4>[15]</font></strong>
+Consider the function <span class="math notranslate nohighlight">\(f:\mathbb{R} \rightarrow \mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(\displaystyle{f(x)=\frac{|x|}{e^{x-1}}}\)</span>.</p>
+<ol class="simple">
+<li><p>Study the continuity and differentiability of the function.</p></li>
+<li><p>Sketch the graph of <span class="math notranslate nohighlight">\(f\)</span>. To do this, it calculates their relative extremes, inflection points and asymptotes. Also determine its interval(s) of concavity and/or convexity.</p></li>
+<li><p>Determine the absolute extremes of <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[16]</font></strong>
+Show that the equation <span class="math notranslate nohighlight">\(x^4-4\,x^3-1=0\)</span> has a single root in the interval <span class="math notranslate nohighlight">\([4,5]\)</span>.
+Pose the Newton-Raphson method to solve the equation from the previous section. Starting from <span class="math notranslate nohighlight">\(x_0=4\)</span>, obtain the approximation <span class="math notranslate nohighlight">\(x_1\)</span> by hand and the approximation <span class="math notranslate nohighlight">\(x_7\)</span> using <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
+<p><strong><FONT SIZE=4>[17]</font></strong>
+On what interval is the function <span class="math notranslate nohighlight">\(f\)</span> given by <span class="math notranslate nohighlight">\(f(x)=x^3e^x\)</span> increasing? Is it concave or convex in that interval? Sketch your graph.</p>
+<p><strong><FONT SIZE=4>[18]</font></strong>
+Find the condition that <span class="math notranslate nohighlight">\(\lambda\)</span> must satisfy for the polynomial <span class="math notranslate nohighlight">\(x^4 + x^3 + \lambda x^2\)</span> to be concave on some interval. Determine that interval based on <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<p><strong><FONT SIZE=4>[19]</font></strong>
+Find a cubic polynomial without local extrema but with an inflection point and a horizontal tangent at <span class="math notranslate nohighlight">\(P=(1,\, 20)\)</span>.</p>
+<p><strong><FONT SIZE=4>[20]</font></strong>
+Sketch the graph of a function whose slope is always positive and increasing. Do you know of any elementary function that is an example of this situation? <br> Sketch the graph of a function whose slope is always positive and decreasing. Do you know of any elementary function that is an example of this situation?</p>
+<p><strong><FONT SIZE=4>[21]</font></strong>
+A rectangle whose base is on the abscissa axis has its two upper vertices in the parabola <span class="math notranslate nohighlight">\(y = 12 - x^2\)</span>. What is the largest area that this rectangle can have? Indicate its dimensions.</p>
+<p><strong><FONT SIZE=4>[22]</font></strong>
+Knowing that <span class="math notranslate nohighlight">\(p(x)=5+(x+1)^2+3(x+1)^3\)</span> is the third-order Taylor polynomial centered at <span class="math notranslate nohighlight">\(x_0=-1\)</span> of a function <span class="math notranslate nohighlight">\(f,\)</span> calculate <span class="math notranslate nohighlight">\(f(-1),\)</span> <span class="math notranslate nohighlight">\(f^\prime (-1)\)</span> and <span class="math notranslate nohighlight">\(f^{\prime \prime}(-1).\)</span> Justify your answer.</p>
+<p><strong><FONT SIZE=4>[23]</font></strong>
+We consider the function <span class="math notranslate nohighlight">\(f\)</span> defined by <span class="math notranslate nohighlight">\(f(x)=\ln(1+x)\)</span>.</p>
+<ol class="simple">
+<li><p>Calculate the McLaurin polynomial (i.e., the Taylor polynomial with <span class="math notranslate nohighlight">\(x_0=0\)</span>) of order two relative to <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+<li><p>Use this polynomial to approximate the value of <span class="math notranslate nohighlight">\(\ln(1.1)\)</span>, limiting the error made.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[24]</font></strong>
+Construct the first-order Taylor polynomial, <span class="math notranslate nohighlight">\(p\)</span>, for the function <span class="math notranslate nohighlight">\(g(x) = \sin (x)\)</span>, centered at the point <span class="math notranslate nohighlight">\(x_0 = \pi/2\)</span>.</p>
+<p>Now consider the function <span class="math notranslate nohighlight">\(f\)</span> defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x) =
+\begin{cases} \sin (x) \quad  &amp; \quad \quad \text{si } x \leq \pi/2 \\
+p(x) \quad    &amp; \quad \quad \text{si } x &gt; \pi/2
+\end{cases}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(p\)</span> being the polynomial constructed in the previous section. What is the class of <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>?</p>
+<p><strong><FONT SIZE=4>[25]</font></strong>
+Determine the Taylor polynomial of order two of the function <span class="math notranslate nohighlight">\(f(x)= \arcsin(x)\)</span> relative to the point <span class="math notranslate nohighlight">\(x_{0}=0\)</span>. <br> Use the previous polynomial to obtain, approximately, the angle whose sine is <span class="math notranslate nohighlight">\(\frac{1}{10}\)</span>.</p>
+<p><strong><FONT SIZE=4>[26]</font></strong>
+Let the function given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cccl}
+f: &amp; \mathcal{D}om(f) \subset \mathbb{R} &amp; \longrightarrow &amp; \mathbb{R} \\
+&amp;        x                    &amp; \rightsquigarrow &amp; f(x) = \dfrac{x^2}{e^x}
+\end{array}
+\end{split}\]</div>
+<ol class="simple">
+<li><p>Calculate the domain of <span class="math notranslate nohighlight">\(f.\)</span></p></li>
+<li><p>Calculate the absolute extremes of <span class="math notranslate nohighlight">\(f\)</span> in the interval <span class="math notranslate nohighlight">\([0,10]\)</span>, previously justifying its existence.</p></li>
+<li><p>Find the absolute extrema of <span class="math notranslate nohighlight">\(f\)</span> in its domain.</p></li>
+</ol>
+</section>
+<section id="complementary-exercises">
+<h2><span class="section-number">3.7.2. </span>Complementary exercises<a class="headerlink" href="#complementary-exercises" title="Permalink to this headline">#</a></h2>
+<p><strong><font SIZE=4>[1 C]</font></strong>
+If the tangent line to the graph of the function <span class="math notranslate nohighlight">\(y = f(x)\)</span> at the point <span class="math notranslate nohighlight">\((4,3)\)</span>
+passes through the point <span class="math notranslate nohighlight">\((0,2)\)</span>, calculates the value of the function <span class="math notranslate nohighlight">\(f\)</span> and its derivative at the point whose
+abscissa is <span class="math notranslate nohighlight">\(x = 4\)</span>.</p>
+<p><strong><font SIZE=4>[2 C]</font></strong>
+Approximate the solution of <span class="math notranslate nohighlight">\(x^3 - x - 1 = 0\)</span> in <span class="math notranslate nohighlight">\([1.3,\, 1.4]\)</span> using the Newton-Raphson method, starting from <span class="math notranslate nohighlight">\(x_0 = 1\)</span> and performing three iterations.</p>
+<p><strong><font SIZE=4>[3 C]</font></strong>
+Find the numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> such that <span class="math notranslate nohighlight">\(\,\,\displaystyle{\lim _{x\rightarrow 0}{\frac{\sqrt{ax+b}-2}{x}}=1}. \)</span></p>
+<p><strong><font SIZE=4>[4 C]</font></strong>
+Calculate the limit:</p>
+<div class="math notranslate nohighlight">
+\[
+\displaystyle{\lim_{x\rightarrow 0} \dfrac{(1+x)^{\frac{1}{x}} - e}{x}.}
+\]</div>
+<p><strong><font SIZE=4>[5 C]</font></strong>
+We consider the function <span class="math notranslate nohighlight">\(f: \mathbb{R} \longrightarrow \mathbb{R}\)</span> given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x)=
+\begin{cases}
+\displaystyle{\dfrac{1-\cos (x)}{x^2}} &amp; \text{  si  } x\neq 0 \\
+\lambda  &amp; \text{  si  } x = 0
+\end{cases}
+\end{split}\]</div>
+<ol class="simple">
+<li><p>Calculate the value of <span class="math notranslate nohighlight">\(\lambda\)</span> for which <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\(x=0\)</span>.</p></li>
+<li><p>Calculate <span class="math notranslate nohighlight">\(f^{\prime \prime}(0)\)</span> for the value of <span class="math notranslate nohighlight">\(\lambda\)</span> found in the previous section.</p></li>
+</ol>
+<p><strong><font SIZE=4>[6 C]</font></strong>
+Let <span class="math notranslate nohighlight">\(f:\mathbb{R}\to \mathbb{R}\)</span> defined as <span class="math notranslate nohighlight">\(f(x) =
+\begin{cases}
+\displaystyle 1 - \frac{x^2}{2} &amp; \text{ si } x &lt; 0 \\
+\cos (x) &amp; \text{ si } x \geq 0
+\end{cases}
+\)</span>. <br> How many times is <span class="math notranslate nohighlight">\(f\)</span> differentiable at <span class="math notranslate nohighlight">\(x_{0}=0\)</span>?</p>
+<p><strong><font SIZE=4>[7 C]</font></strong>
+Check that the function <span class="math notranslate nohighlight">\(F\)</span>, given by <span class="math notranslate nohighlight">\(F(x) = \dfrac{1}{4} x^2 - \ln x\)</span>, has a relative minimum, <span class="math notranslate nohighlight">\(x_{\min}\)</span>, in the interval <span class="math notranslate nohighlight">\( (1.3)\)</span>.
+Use the dichotomy algorithm, starting from <span class="math notranslate nohighlight">\(a = 1\)</span> and <span class="math notranslate nohighlight">\(b = 3\)</span>, to approximate <span class="math notranslate nohighlight">\(x_{\min}\)</span> with an error less than <span class="math notranslate nohighlight">\(\frac{1}{7}\)</span>.</p>
+<p><strong><font SIZE=4>[8 C]</font></strong>
+We consider the equation , <span class="math notranslate nohighlight">\(x e^{-x} = e^{-3}\)</span>.</p>
+<ol class="simple">
+<li><p>Check that you have exactly two solutions in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p></li>
+<li><p>Establish the Newton-Raphson method starting from a point in the interval <span class="math notranslate nohighlight">\([2,5]\)</span>. Calculate <span class="math notranslate nohighlight">\(x_2\)</span> from <span class="math notranslate nohighlight">\(x_0 = 2\)</span>.</p></li>
+</ol>
+<p><strong><font SIZE=4>[9 C]</font></strong>
+We wish to construct an arc that describes the curve given by <span class="math notranslate nohighlight">\(f(x) = \sqrt{1-x^2}\)</span>. To facilitate construction, it is proposed to approximate said function by a second-order Taylor polynomial centered on <span class="math notranslate nohighlight">\(a = 0\)</span>. Calculate said polynomial and approximate <span class="math notranslate nohighlight">\(f(1)\)</span>.</p>
+<p><strong><font SIZE=4>[10 C]</font></strong>
+During coughing, the diameter of the trachea decreases. The velocity <span class="math notranslate nohighlight">\(v\)</span> of the air in the trachea during cough is related to the radius, <span class="math notranslate nohighlight">\(r,\)</span> by the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+v = Ar^2 (r_0-r) \quad , \qquad A &gt; 0
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_0\)</span> is the radius in the relaxed state.</p>
+<ol class="simple">
+<li><p>Find the radius of the trachea when the speed is maximum, as well as this speed.</p></li>
+<li><p>Justifies the existence of a minimum. calculate it</p></li>
+</ol>
+<p><strong><font SIZE=4>[11 C]</font></strong>
+Find the radius and height of a cylindrical soda can.
+<span class="math notranslate nohighlight">\(33\)</span> cm<span class="math notranslate nohighlight">\(^3\)</span> that minimizes the amount of material used for its construction (assume that the thickness of the material used is uniform throughout the can and negligible).</p>
+<p><strong><font SIZE=4>[12 C]</font></strong>
+Let the real function <span class="math notranslate nohighlight">\(f\)</span> be given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x) =
+\begin{cases} \frac{\sin( x)}{x} - 1 \quad and \quad \quad \text{si } x &lt; 0 \\ &amp; \\
+x^3 e^{-x^2} \quad           &amp; \quad \quad \text{si } x \geq 0 \, .
+\end{cases}
+\end{split}\]</div>
+<ol class="simple">
+<li><p>Study the differentiability of <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p></li>
+<li><p>Calculate the second-order Taylor polynomial of the function <span class="math notranslate nohighlight">\(f\)</span> in the neighborhood of <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p></li>
+<li><p>Reasonably determine the absolute extremes of <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\([0,+\infty)\)</span>.</p></li>
+</ol>
+<p><strong><font SIZE=4>[13 C]</font></strong>
+Let the function <span class="math notranslate nohighlight">\(f\)</span> be given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x) =
+\begin{cases} \dfrac{\sin (x)}{x} \, &amp; \quad \quad \text{si } x &lt; 0 \\
+2 - \cos(x) \,        &amp; \quad \quad \text{si } x \geq 0 \, .
+\end{cases}
+\end{split}\]</div>
+<ol class="simple">
+<li><p>Study the continuity of <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p></li>
+<li><p>Determine, if <span class="math notranslate nohighlight">\(f'(0)\)</span> exists. If so, reason whether <span class="math notranslate nohighlight">\(f\)</span> is of class one in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p></li>
+<li><p>Calculate the second degree Taylor polynomial of <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(x = -\pi\)</span>.</p></li>
+</ol>
+<p><strong><font SIZE=4>[14 C]</font></strong>
+We call <span class="math notranslate nohighlight">\(f(x) = \sqrt{x+1}\)</span>.</p>
+<ol class="simple">
+<li><p>Find the fourth-order Taylor polynomial of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p></li>
+<li><p>Approximate <span class="math notranslate nohighlight">\(\sqrt{1.02}\)</span> with the Taylor polynomial of the second degree and limit the error made.</p></li>
+</ol>
+<p><strong><font SIZE=4>[15 C]</font></strong>
+Obtain the McLaurin polynomial (Taylor, with <span class="math notranslate nohighlight">\(x_{0}=0\)</span>) of order less than or equal to <span class="math notranslate nohighlight">\(n\)</span> relative to <span class="math notranslate nohighlight">\(f(x) = (1-x)^{\alpha}\)</span>, with <span class="math notranslate nohighlight">\(\ alpha \in \mathbb{R}\)</span>.</p>
+<p><strong><font SIZE=4>[16 C]</font></strong>
+Construct the Taylor polynomial of degree less than or equal to <span class="math notranslate nohighlight">\(3\)</span> for the function <span class="math notranslate nohighlight">\(f(x)=x^2 - 2x + 1\)</span> in a neighborhood of the point <span class="math notranslate nohighlight">\(x_{0} = 1\)</span>.</p>
+<p><strong><font SIZE=4>[17 C]</font></strong>
+Determine the absolute extrema of the function <span class="math notranslate nohighlight">\(f(x)=|16-x^2|\)</span> in the interval <span class="math notranslate nohighlight">\([-5,8]\)</span>.</p>
+<p><strong><font SIZE=4>[18 C]</font></strong>
+We want to approximate a root of the equation <span class="math notranslate nohighlight">\(x^3 -x^2 + 2 = 0\)</span>.</p>
+<ol class="simple">
+<li><p>Justify the existence of roots of the function <span class="math notranslate nohighlight">\(f\)</span> given by <span class="math notranslate nohighlight">\(f(x)=x^3 -x^2 + 2\)</span> in the interval <span class="math notranslate nohighlight">\([-2,3]\)</span>.</p></li>
+<li><p>Starting from <span class="math notranslate nohighlight">\(x_0=2\)</span>, calculate, using Newton’s algorithm, <span class="math notranslate nohighlight">\(x_1\)</span>. Use two correct decimal places in your calculations.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos/03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="06.TeoremaTaylor_en.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.6. </span>Theorem of Taylor</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../04/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Integración de una función de variable real</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+This book is under a <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Creative Commons Licence, Atribution 4.0 International </a>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
