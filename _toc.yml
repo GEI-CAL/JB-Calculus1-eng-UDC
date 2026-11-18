@@ -104,3 +104,11 @@ chapters:
       title: Exam January 2023
     - file: chapters/06/july_23
       title: Exam July 2023
+    - file: chapters/06/january_24
+      title: Exam January 2024
+    - file: chapters/06/july_24
+      title: Exam July 2024
+    - file: chapters/06/january_25
+      title: Exam January 2025
+    - file: chapters/06/july_25
+      title: Exam July 2025
