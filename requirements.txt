@@ -1,6 +1,5 @@
-jupyter-book
+jupyter-book<2
 numpy
-datascience
 sphinx-proof
 matplotlib
 sympy

@@ -1,6 +1,6 @@
 format: jb-book
 root: chapters/README
-title: Introducción
+title: Introduction
 options:
  numbered: true
 chapters:
@@ -8,95 +8,107 @@ chapters:
 - file: chapters/01/README
   title: Sets of numbers
   sections:
-    - file: chapters/01/01.ConjuntosClasicos
+    - file: chapters/01/01.ClassicalSets
       title: Classical sets of numbers
-    - file: chapters/01/02.NumerosComplejos
+    - file: chapters/01/02.ComplexNumbers
       title: Complex numbers
 
 - file: chapters/02/README
-  title: Real functions of real variable
+  title: Real functions of a real variable
   sections: 
-   - file: chapters/02/01.Boletin0
-     title: Boletin 0 
-   - file: chapters/02/02.IntroduccionFuncionReal
+   - file: chapters/02/01.Worksheet0
+     title: Worksheet 0 
+   - file: chapters/02/02.IntroductionToRealFunctions
      title: Basic definitions 
-   - file: chapters/02/03.FuncionesElementales
+   - file: chapters/02/03.ElementaryFunctions
      title: Elemental functions 
-   - file: chapters/02/04.Limites
+   - file: chapters/02/04.Limits
      title: Limits
-   - file: chapters/02/05.Continuidad
+   - file: chapters/02/05.Continuity
      title: Continuity
-   - file: chapters/02/06.Dicotomia
-     title: Bisection numerical method
+   - file: chapters/02/06.BisectionMethod
+     title: Bisection method
    - file: chapters/02/07.Lagrange
      title: Lagrange interpolation polynomial
-   - file: chapters/02/08.Boletin1
-     title: Boletin 1
-   - file: chapters/02/09.Boletin2
-     title: Boletin 2
+   - file: chapters/02/08.Worksheet1
+     title: Worksheet 1
+   - file: chapters/02/09.Worksheet2
+     title: Worksheet 2
+   - file: chapters/02/10.Worksheet2Bis
+     title: Worksheet 2 (continued)
 
 - file: chapters/03/README_en
   title: Derivative
   sections:
-    - file: chapters/03/01.DerivacionDefProp_en
+    - file: chapters/03/01.DerivativeDefinitionProperties_en
       title: Definition of the derivative and basic properties
     - file: chapters/03/02.NewtonRaphson_en
       title: Newton-Raphson numerical method
-    - file: chapters/03/03.DerivadasSucesivas_en
+    - file: chapters/03/03.SuccessiveDerivatives_en
       title: Successive derivatives
-    - file: chapters/03/04.AplicacionesDerivada_en
+    - file: chapters/03/04.DerivativeApplications_en
       title: Applications of the derivative
-    - file: chapters/03/05.ConcavidadConvexidad_en
+    - file: chapters/03/05.ConcavityConvexity_en
       title: Convexity and concavity
-    - file: chapters/03/06.TeoremaTaylor_en
+    - file: chapters/03/06.TaylorTheorem_en
       title: Taylor's theorem
-    - file: chapters/03/07.Boletin3_en
-      title: Boletin 3
+    - file: chapters/03/07.Worksheet3_en
+      title: Worksheet 3
+    - file: chapters/03/08.Worksheet3Bis_en
+      title: Worksheet 3 (continued)
    
 - file: chapters/04/README
   title: Integration
   sections:
-    - file: chapters/04/01.IntegracionIndefinida
+    - file: chapters/04/01.IndefiniteIntegration
       title: Indefinite integration
-    - file: chapters/04/02.IntegracionRiemann
+    - file: chapters/04/02.RiemannIntegration
       title: Riemann integration
-    - file: chapters/04/03.TeoremaFundamental
+    - file: chapters/04/03.FundamentalTheorem
       title: Fundamental Theorem of Calculus
-    - file: chapters/04/04.IntegracionNumerica
+    - file: chapters/04/04.NumericalIntegration
       title: Numerical integration
-    - file: chapters/04/05.IntegracionImpropia
+    - file: chapters/04/05.ImproperIntegration
       title: Improper integration
-    - file: chapters/04/06.AplicacionesIntegral
+    - file: chapters/04/06.IntegralApplications
       title: Applications of integration
-    - file: chapters/04/07.EcuacionesDiferenciales
+    - file: chapters/04/07.DifferentialEquations
       title: Differential equations
-    - file: chapters/04/08.Boletin4
-      title: Boletin 4
+    - file: chapters/04/08.Worksheet4
+      title: Worksheet 4
 
 - file: chapters/05/README
   title: Python for Calculus in one variable
   sections:
-    - file: chapters/05/01.IntroduccionSympy
+    - file: chapters/05/01.IntroductionSymPy
       title: Introduction to SymPy
-    - file: chapters/05/02.LimitesContinuidadSympy
+    - file: chapters/05/02.LimitsContinuitySymPy
       title: Limits and continuity in SymPy
-    - file: chapters/05/03.IntroduccionNumpy
+    - file: chapters/05/03.IntroductionNumPy
       title: Introduction to NumPy
-    - file: chapters/05/04.RepresentacionGraficaMatplotlib
+    - file: chapters/05/04.MatplotlibGraphicalRepresentation
       title: Graphics with Matplotlib
-    - file: chapters/05/05.Derivacion
+    - file: chapters/05/05.Differentiation
       title: Derivatives in Python
-    - file: chapters/05/06.Integracion
+    - file: chapters/05/06.Integration
       title: Integration in Python
 
 - file: chapters/06/README
   title: Exercices and exams
   sections:
-    - file: chapters/06/enero_22
+    - file: chapters/06/january_22
       title: Exam January 2022
-    - file: chapters/06/julio_22
+    - file: chapters/06/july_22
       title: Exam July 2022
-    - file: chapters/06/enero_23
+    - file: chapters/06/january_23
       title: Exam January 2023
-    - file: chapters/06/julio_23
+    - file: chapters/06/july_23
       title: Exam July 2023
+    - file: chapters/06/january_24
+      title: Exam January 2024
+    - file: chapters/06/july_24
+      title: Exam July 2024
+    - file: chapters/06/january_25
+      title: Exam January 2025
+    - file: chapters/06/july_25
+      title: Exam July 2025

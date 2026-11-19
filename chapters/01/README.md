@@ -1,7 +1,7 @@
-# Conjuntos de números #
+# Sets of numbers #
 
-En esta sección, todavía introductoria, mostraremos los distintos conjuntos de números que necesitaremos a lo largo del presente curso.
+In this still introductory section, we will present the different sets of numbers that we will need throughout this course.
 
-Lo dividimos en 2 secciones:
-1. Conjuntos clásicos de números, entre los que encontramos los números naturales, $\mathbb{N}$, los enteros, $\mathbb{Z},$ los racionales, $\mathbb{Q}$ y los números reales, $\mathbb{R}$.
-2. Números complejos, $\mathbb{C}$.
+We divide it into 2 sections:
+1. Classical sets of numbers, among which we find the natural numbers, $\mathbb{N}$, the integers, $\mathbb{Z},$ the rational numbers, $\mathbb{Q}$, and the real numbers, $\mathbb{R}$.
+2. Complex numbers, $\mathbb{C}$.

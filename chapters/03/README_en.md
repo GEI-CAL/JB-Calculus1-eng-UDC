@@ -2,7 +2,7 @@
 
 In this chapter, we will introduce the derivation for real functions of a real variable and study their properties and some applications.
 
-We divide it into six sections (plus a problem bulletin):
+We divide it into six sections (plus a worksheet):
 
 1. Definition of derivative and basic properties.
 2. Newton-Raphson numerical method.

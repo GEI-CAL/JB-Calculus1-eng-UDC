@@ -1,3 +1,3 @@
-# Ejercicios y exámenes
+# Exercises and Exams
 
-En este capítulo iremos incluyendo (poco a poco) algunos ejercicios resueltos y exámenes de la asignatura (lo sentimos: corresponden a años ya pasados).
+In this chapter we will gradually include some solved exercises and past exams from the course.

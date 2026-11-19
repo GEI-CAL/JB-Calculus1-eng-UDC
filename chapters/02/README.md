@@ -1,12 +1,12 @@
-# Funciones reales de una variable real #
+# Real functions of a real variable #
 
-En este capítulo introduciremos las primeras definiciones sobre funciones reales de variable real. 
+In this chapter we will introduce the first definitions concerning real functions of a real variable.
 
-Lo dividimos en seis secciones (más un boletín de problemas):
+We divide it into six sections (plus a problem sheet):
 
-1. Definiciones básicas.
-2. Funciones elementales.
-3. Límites.
-4. Continuidad.
-5. Método de dicotomía.
-6. Polinomio de interpolación de Lagrange.
+1. Basic definitions.
+2. Elemental functions.
+3. Limits.
+4. Continuity.
+5. Bisection method.
+6. Lagrange interpolation polynomial.

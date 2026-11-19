@@ -13,7 +13,7 @@ execute:
   timeout                   : 600    # The maximum time (in seconds) each notebook cell is allowed to run.
 
 #######################################################################################
-# Extensiones tomadas del JB "Computational Mechanics"
+# Extensions taken from the JB "Computational Mechanics"
 parse:
   myst_enable_extensions: #true
     - amsmath
@@ -30,7 +30,7 @@ parse:
   myst_dmath_double_inline: true
 
 ######################################################################
-# Incluyo lo siguiente para los entornos definición, teorema, etc.
+# I include the following for definition, theorem, etc. environments
 ################
 sphinx:
   extra_extensions:
@@ -45,18 +45,20 @@ html:
   home_page_in_navbar       : false  # Whether to include your home page in the left Navigation Bar
   extra_footer : |
       <div>
-      This book is under a <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Creative Commons Licence, Atribution 4.0 International </a>
+      This book is under a <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Creative Commons License, Attribution 4.0 International </a>
       <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
       </div>
 
 #######################################################################################
 # Launch button settings
 launch_buttons:
-  binderhub_url             : "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
-  notebook_interface        : "jupyterlab"
+  colab_url: "https://colab.research.google.com"
+  binderhub_url: "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
+  thebe: true
+  notebook_interface: "jupyterlab"
   
 repository:
-   url                       : https://github.com/GEI-CAL/JB-Calculo1-UDC  # The URL to your book's repository
+   url                       : https://github.com/maprieto/JB-Calculus1-eng-UDC  # The URL to your book's repository
    branch                    : main  # Which branch of the repository should be used when creating links
 
 # sphinx:

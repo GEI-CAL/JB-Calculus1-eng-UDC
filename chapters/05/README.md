@@ -1,16 +1,16 @@
-# Python para cálculo de una variable
+# Python for Single-Variable Calculus
 
-En este capítulo iremos introduciendo las nociones que necesitaremos para utilizar Python en el contexto del cálculo en una variable.
+In this chapter we will introduce the ideas we need in order to use Python in the context of single-variable calculus.
 
-Está pensado para ir intercalando con el resto de capítulos (no para dar al final de los mismos), ya que el resto del libro hace uso de la información que incluimos aquí.
+It is intended to be interleaved with the rest of the chapters (not taught at the end of them), since the rest of the book makes use of the information included here.
 
-Creemos que lo óptimo es acostumbrarse primero a **SymPy** para luego, justo antes de que se empiecen a explicar los métodos numéricos (es decir, antes de la sección en la que se explica el método de dicotomía) estudiar **Numpy** y **Matplotlib**. Por eso, las gráficas de funciones hasta ese punto se muestran con **SymPy** para, a partir de ahí, utilizar la potencia de **Matplotlib**.
+We believe that the best approach is to become familiar with **SymPy** first and then, just before numerical methods begin to be explained (that is, before the section on the bisection method), study **NumPy** and **Matplotlib**. For that reason, function graphs up to that point are shown with **SymPy**, and from then on we use the power of **Matplotlib**.
 
-Dividimos este capítulo en las siguientes secciones:
+We divide this chapter into the following sections:
 
-1. Introducción a **Sympy**.
-2. Límites y continuidad en **Sympy**.
-3. Introducción a **Numpy**.
-4. Graficación de funciones con **Matplotlib**.
-5. Derivación en **Python**.
-6. Integración en **Python**.
+1. Introduction to **SymPy**.
+2. Limits and continuity with **SymPy**.
+3. Introduction to **NumPy**.
+4. Graphing functions with **Matplotlib**.
+5. Differentiation in **Python**.
+6. Integration in **Python**.
