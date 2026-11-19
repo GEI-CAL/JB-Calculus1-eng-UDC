@@ -1,6 +1,5 @@
-jupyter-book==0.15.1
+jupyter-book
 numpy
-datascience
 sphinx-proof
 matplotlib
 sympy
